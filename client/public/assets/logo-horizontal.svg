@@ -1,0 +1,121 @@
+<svg width="280" height="52" viewBox="0 0 280 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Brand gradient - Pink through Rose to Champagne -->
+    <linearGradient id="hl-brandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#DE85E2"/>
+      <stop offset="30%" stop-color="#DE8DDB"/>
+      <stop offset="60%" stop-color="#E4B2BE"/>
+      <stop offset="100%" stop-color="#EACAA1"/>
+    </linearGradient>
+
+    <!-- Lens glass — subtle frosted effect -->
+    <radialGradient id="hl-lensGlass" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#F3EEFF" stop-opacity="0.85"/>
+      <stop offset="60%" stop-color="#E8E4FC" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#C9D0FC" stop-opacity="0.3"/>
+    </radialGradient>
+
+    <!-- Lens rim highlight for dimensionality -->
+    <linearGradient id="hl-rimHighlight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#DE85E2"/>
+      <stop offset="40%" stop-color="#DE8DDB"/>
+      <stop offset="70%" stop-color="#E4B2BE"/>
+      <stop offset="100%" stop-color="#E9BCA6"/>
+    </linearGradient>
+
+    <!-- Rocket body gradient — Lavender to Pink -->
+    <linearGradient id="hl-rocketBody" x1="50%" y1="100%" x2="50%" y2="0%">
+      <stop offset="0%" stop-color="#C9D0FC"/>
+      <stop offset="50%" stop-color="#DE8DDB"/>
+      <stop offset="100%" stop-color="#DE85E2"/>
+    </linearGradient>
+
+    <!-- Growth bar gradient — Green to Mint -->
+    <linearGradient id="hl-barGrad" x1="50%" y1="100%" x2="50%" y2="0%">
+      <stop offset="0%" stop-color="#9DD37D"/>
+      <stop offset="100%" stop-color="#E9FEDE"/>
+    </linearGradient>
+
+    <!-- Handle gradient -->
+    <linearGradient id="hl-handleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E4B2BE"/>
+      <stop offset="100%" stop-color="#E9BCA6"/>
+    </linearGradient>
+
+    <!-- Subtle glow filter for lens -->
+    <filter id="hl-lensGlow" x="-15%" y="-15%" width="130%" height="130%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2" result="blur"/>
+      <feFlood flood-color="#C9D0FC" flood-opacity="0.25" result="color"/>
+      <feComposite in="color" in2="blur" operator="in" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Rocket exhaust glow -->
+    <filter id="hl-exhaustGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- === LOGO MARK === -->
+  <g transform="translate(2, 2)" filter="url(#hl-lensGlow)">
+    <!-- Lens outer ring — brand gradient stroke for premium feel -->
+    <circle cx="22" cy="22" r="18" stroke="url(#hl-rimHighlight)" stroke-width="3.2" fill="url(#hl-lensGlass)"/>
+
+    <!-- Inner lens shine arc — adds dimensionality -->
+    <path d="M12 12 Q16 8 24 10" stroke="white" stroke-width="1.2" stroke-opacity="0.45" fill="none" stroke-linecap="round"/>
+
+    <!-- Lens handle -->
+    <line x1="34.5" y1="34.5" x2="45" y2="45" stroke="url(#hl-handleGrad)" stroke-width="3.8" stroke-linecap="round"/>
+    <!-- Handle highlight -->
+    <line x1="35" y1="34" x2="44" y2="43" stroke="white" stroke-width="0.8" stroke-opacity="0.25" stroke-linecap="round"/>
+
+    <!-- Ascending growth bars inside lens (4 bars, ascending left to right) -->
+    <rect x="10" y="27" width="3.2" height="5" rx="1.2" fill="url(#hl-barGrad)" opacity="0.85"/>
+    <rect x="14.5" y="23" width="3.2" height="9" rx="1.2" fill="url(#hl-barGrad)" opacity="0.9"/>
+    <rect x="19" y="18.5" width="3.2" height="13.5" rx="1.2" fill="url(#hl-barGrad)" opacity="0.95"/>
+    <rect x="23.5" y="14" width="3.2" height="18" rx="1.2" fill="url(#hl-barGrad)"/>
+
+    <!-- Rocket launching from tallest bar -->
+    <g transform="translate(25.5, 7) rotate(-12)">
+      <!-- Rocket body -->
+      <path d="M0 7 C0 7 2 -1 2 -1 C2 -1 4 7 4 7 L3.2 7 L2 9 L0.8 7 Z" fill="url(#hl-rocketBody)"/>
+      <!-- Rocket window -->
+      <circle cx="2" cy="3.5" r="0.9" fill="#F3EEFF" opacity="0.9"/>
+      <!-- Left fin -->
+      <path d="M0 7 L-1.2 9.5 L0.8 8 Z" fill="#DE85E2"/>
+      <!-- Right fin -->
+      <path d="M4 7 L5.2 9.5 L3.2 8 Z" fill="#DE85E2"/>
+      <!-- Exhaust flame -->
+      <g filter="url(#hl-exhaustGlow)">
+        <path d="M1.2 9 Q2 13 2.8 9" stroke="#E9BCA6" stroke-width="0.9" fill="#EACAA1" fill-opacity="0.6"/>
+        <path d="M1.5 9 Q2 11.5 2.5 9" stroke="#DE85E2" stroke-width="0.5" fill="none" opacity="0.7"/>
+      </g>
+    </g>
+
+    <!-- AI sparkle accents -->
+    <circle cx="11" cy="13" r="1.3" fill="#DE85E2" opacity="0.75"/>
+    <circle cx="30" cy="16" r="1" fill="#C9D0FC" opacity="0.65"/>
+    <circle cx="14" cy="31" r="0.8" fill="#EACAA1" opacity="0.55"/>
+    <!-- Extra sparkle for premium feel -->
+    <circle cx="28" cy="28" r="0.6" fill="#DE8DDB" opacity="0.45"/>
+  </g>
+
+  <!-- === WORDMARK === -->
+  <g transform="translate(58, 0)">
+    <!-- LaunchLens -->
+    <text x="0" y="27" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="22" font-weight="700" fill="#171717" letter-spacing="-0.03em">LaunchLens</text>
+
+    <!-- AI with accent styling -->
+    <text x="138" y="27" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="22" font-weight="500" fill="#171717" fill-opacity="0.7" letter-spacing="-0.01em">AI</text>
+
+    <!-- Tagline -->
+    <text x="0.5" y="42" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="400" fill="#6B6B6B" letter-spacing="0.04em">Product Launch Intelligence</text>
+  </g>
+</svg>
