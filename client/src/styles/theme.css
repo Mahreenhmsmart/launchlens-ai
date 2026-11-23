@@ -1,0 +1,704 @@
+/*
+ * PROJECT THEME — the only file you edit to change how this app looks.
+ *
+ * Every value is a space-separated R G B channel triplet: no commas, no '#'.
+ * Convert the hex you want:  #f59e0b -> 245 158 11.
+ *
+ * Tailwind maps each variable below to a semantic utility, so bg-primary,
+ * text-muted-foreground, border-border and opacity modifiers like bg-primary/10
+ * all follow from these values. Rewrite the VALUES to give this project its own
+ * identity. Do not rename or delete a variable.
+ *
+ * For an app that should look dark, set these root values to dark colours
+ * (e.g. --background: 2 6 23; --foreground: 241 245 249). Do NOT add `dark:`
+ * variants unless the brief asks for a user-togglable light/dark switch.
+ *
+ * You may also add plain @keyframes rules to this file. Do not use @layer or
+ * @apply here.
+ */
+:root {
+  /* =========================================================================
+   * BRAND COLORS — LaunchLens AI Palette
+   * These are the exact brand colors specified for the project.
+   * Use these via CSS custom properties or Tailwind's arbitrary values.
+   * ========================================================================= */
+  
+  /* Pink (#DE85E2) - Primary accent, gradient start */
+  --brand-pink: 222 133 226;
+  /* Rose (#DE8DDB) - Secondary accent */
+  --brand-rose: 222 141 219;
+  /* Blush (#E4B2BE) - Soft warm tone */
+  --brand-blush: 228 178 190;
+  /* Peach (#E9BCA6) - Warm neutral */
+  --brand-peach: 233 188 166;
+  /* Champagne (#EACAA1) - Light warm accent, gradient end */
+  --brand-champagne: 234 202 161;
+  /* Lavender (#C9D0FC) - Cool accent, focus states */
+  --brand-lavender: 201 208 252;
+  /* Mint (#E9FEDE) - Fresh success tone */
+  --brand-mint: 233 254 222;
+  /* Green (#9DD37D) - Success/positive indicator */
+  --brand-green: 157 211 125;
+  /* Deep Plum (#201034) - Dark surface, sidebar background */
+  --brand-deep-plum: 32 16 52;
+  /* Deep Black (#171717) - Text, icons, strong contrast */
+  --brand-deep-black: 23 23 23;
+
+  /* =========================================================================
+   * SEMANTIC TOKENS — Mapped to Tailwind utilities
+   * ========================================================================= */
+  
+  /* Corner radius for the whole app. 0 = square, 0.5rem = subtle,
+     0.75rem = default, 1.25rem = soft/rounded. */
+  --radius: 0.75rem;
+
+  /* Page background (#F6F6F6) and body text — Deep Black (#171717) */
+  --background: 246 246 246;
+  --foreground: 23 23 23;
+
+  /* Cards, panels, modal bodies, form controls — Clean White (#FDFDFD) */
+  --card: 253 253 253;
+  --card-foreground: 23 23 23;
+
+  /* De-emphasised surfaces and text: hover fills, captions, placeholders */
+  --muted: 240 240 240;
+  --muted-foreground: 107 107 107;
+
+  /* Brand colour — primary buttons, active states, focus ring — Lavender (#C9D0FC) */
+  --primary: 201 208 252;
+  --primary-foreground: 23 23 23;
+
+  /* Neutral action — Cancel buttons, secondary chips */
+  --secondary: 240 240 240;
+  --secondary-foreground: 42 42 42;
+
+  /* Soft brand tint — icon chips, active nav item, highlighted row */
+  --accent: 243 238 255;
+  --accent-foreground: 107 114 196;
+
+  /* Destructive — delete buttons, form errors — Soft Rose (#E88B9E) */
+  --destructive: 232 139 158;
+  --destructive-foreground: 255 255 255;
+
+  /* Status accents (used by <Alert variant="success" | "warning" />) */
+  /* Green (#9DD37D) for success */
+  --success: 157 211 125;
+  /* Pale Champagne (#FFF5D2) for warning — paired with dark amber text */
+  --warning: 255 245 210;
+
+  /* Lines and focus — Soft lavender borders (#C9D0FC) for input fields */
+  --border: 232 232 232;
+  --input: 201 208 252;
+  --ring: 201 208 252;
+
+  /* =========================================================================
+   * SEMANTIC COLOR ALIASES — Direct brand color references
+   * Use these for explicit brand-color usage in components.
+   * ========================================================================= */
+  
+  --color-primary: var(--brand-pink);          /* #DE85E2 — primary accent */
+  --color-primary-hover: 212 120 216;          /* #D478D8 — darker pink for hover */
+  --color-secondary: var(--brand-lavender);    /* #C9D0FC — cool secondary */
+  --color-accent: var(--brand-rose);           /* #DE8DDB — rose accent */
+  --color-bg: var(--background);               /* page background */
+  --color-surface: var(--card);                /* card/surface background */
+  --color-text: var(--foreground);             /* body text */
+  --color-text-muted: var(--muted-foreground); /* de-emphasized text */
+  --color-border: var(--border);               /* borders */
+  --color-input-bg: 246 246 246;               /* input field background */
+  --color-success: var(--brand-green);         /* #9DD37D */
+  --color-warning: 255 245 210;                /* pale champagne */
+  --color-error: var(--destructive);           /* soft rose */
+  --color-brand-blush: var(--brand-blush);     /* #E4B2BE */
+  --color-brand-peach: var(--brand-peach);     /* #E9BCA6 */
+  --color-brand-champagne: var(--brand-champagne); /* #EACAA1 */
+  --color-brand-mint: var(--brand-mint);       /* #E9FEDE */
+  --color-brand-plum: var(--brand-deep-plum);  /* #201034 — dark surfaces */
+  --color-brand-black: var(--brand-deep-black);/* #171717 — strong contrast */
+
+  /* =========================================================================
+   * DESIGN SYSTEM TOKENS
+   * ========================================================================= */
+  
+  /* Brand gradients — pastel horizontal gradient for header/accent areas */
+  --brand-gradient: linear-gradient(90deg, #DE85E2, #DE8DDB, #E4B2BE, #E9BCA6, #ECA58B, #EACAA1);
+  --brand-gradient-vertical: linear-gradient(180deg, #DE85E2, #DE8DDB, #E4B2BE, #E9BCA6, #ECA58B, #EACAA1);
+  --brand-gradient-diagonal: linear-gradient(135deg, #DE85E2, #C9D0FC);
+  /* Button gradient — Pink to Rose to Lavender */
+  --btn-gradient-primary: linear-gradient(135deg, #DE85E2 0%, #DE8DDB 50%, #C9D0FC 100%);
+  --btn-gradient-primary-hover: linear-gradient(135deg, #D478D8 0%, #D480D1 50%, #BDC4F0 100%);
+
+  /* Pastel card tints — soft background variants for visual variety */
+  /* Light Lavender tint (#F3EEFF) */
+  --card-lavender: 243 238 255;
+  /* Mint Green tint (#E9FEDE) */
+  --card-mint: 233 254 222;
+  /* Pale Champagne tint (#FFF5D2) */
+  --card-cream: 255 245 210;
+
+  /* =========================================================================
+   * TYPOGRAPHY TOKENS
+   * ========================================================================= */
+  
+  /* Font families */
+  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+
+  /* Font sizes (in rem) - Scale from 12px to 48px */
+  --text-xs: 0.75rem;      /* 12px */
+  --text-sm: 0.875rem;     /* 14px */
+  --text-base: 1rem;       /* 16px */
+  --text-lg: 1.125rem;     /* 18px */
+  --text-xl: 1.25rem;      /* 20px */
+  --text-2xl: 1.5rem;      /* 24px */
+  --text-3xl: 1.875rem;    /* 30px */
+  --text-4xl: 2.25rem;     /* 36px */
+  --text-5xl: 3rem;        /* 48px */
+
+  /* Font weights */
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+
+  /* Line heights */
+  --leading-none: 1;
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+  --leading-loose: 2;
+
+  /* Letter spacing */
+  --tracking-tighter: -0.05em;
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0em;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+  --tracking-widest: 0.1em;
+
+  /* =========================================================================
+   * BUTTON STYLES
+   * ========================================================================= */
+  
+  /* Button sizes */
+  --btn-height-sm: 2rem;      /* 32px */
+  --btn-height-md: 2.5rem;     /* 40px */
+  --btn-height-lg: 3rem;       /* 48px */
+  
+  --btn-padding-sm: 0.75rem;   /* 12px */
+  --btn-padding-md: 1rem;      /* 16px */
+  --btn-padding-lg: 1.5rem;    /* 24px */
+
+  /* Button border radius */
+  --btn-radius: var(--radius);
+  --btn-radius-sm: 0.375rem;   /* 6px */
+  --btn-radius-lg: 1rem;       /* 16px */
+  --btn-radius-full: 9999px;
+
+  /* Button transitions */
+  --btn-transition: all 150ms ease-in-out;
+  --btn-transition-fast: all 100ms ease-in-out;
+
+  /* Button shadow on hover */
+  --btn-shadow-hover: 0 4px 12px rgba(222, 133, 226, 0.25);
+  --btn-shadow-active: 0 2px 6px rgba(222, 133, 226, 0.2);
+
+  /* =========================================================================
+   * SHADOW TOKENS
+   * ========================================================================= */
+  
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+  
+  /* Brand-specific shadows */
+  --shadow-glow: 0 0 20px rgba(201, 208, 252, 0.4);
+  --shadow-brand: 0 4px 14px rgba(222, 133, 226, 0.25);
+  --shadow-brand-lg: 0 8px 24px rgba(222, 133, 226, 0.3);
+  --shadow-card-hover: 0 8px 20px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(201, 208, 252, 0.3);
+
+  /* =========================================================================
+   * CARD STYLES
+   * ========================================================================= */
+  
+  --card-padding: 1.5rem;           /* 24px */
+  --card-padding-sm: 1rem;          /* 16px */
+  --card-padding-lg: 2rem;          /* 32px */
+  
+  /* Card border radius variants */
+  --card-radius: var(--radius);     /* 12px default */
+  --card-radius-sm: 0.5rem;         /* 8px */
+  --card-radius-lg: 1rem;           /* 16px */
+  --card-radius-xl: 1.5rem;         /* 24px */
+  
+  --card-border: 1px solid rgb(var(--border));
+  --card-border-hover: 1px solid rgba(201, 208, 252, 0.5);
+  --card-bg: rgb(var(--card));
+  --card-shadow: var(--shadow-sm);
+  --card-shadow-hover: var(--shadow-md);
+
+  /* =========================================================================
+   * SPACING TOKENS — 4px increments from 4px to 96px
+   * ========================================================================= */
+  
+  --space-0: 0;
+  --space-px: 1px;
+  --space-0-5: 0.125rem;   /* 2px */
+  --space-1: 0.25rem;      /* 4px */
+  --space-1-5: 0.375rem;   /* 6px */
+  --space-2: 0.5rem;       /* 8px */
+  --space-2-5: 0.625rem;   /* 10px */
+  --space-3: 0.75rem;      /* 12px */
+  --space-3-5: 0.875rem;   /* 14px */
+  --space-4: 1rem;         /* 16px */
+  --space-5: 1.25rem;      /* 20px */
+  --space-6: 1.5rem;       /* 24px */
+  --space-7: 1.75rem;      /* 28px */
+  --space-8: 2rem;         /* 32px */
+  --space-9: 2.25rem;      /* 36px */
+  --space-10: 2.5rem;      /* 40px */
+  --space-11: 2.75rem;     /* 44px */
+  --space-12: 3rem;        /* 48px */
+  --space-14: 3.5rem;      /* 56px */
+  --space-16: 4rem;        /* 64px */
+  --space-20: 5rem;        /* 80px */
+  --space-24: 6rem;        /* 96px */
+
+  /* Section spacing */
+  --section-gap: var(--space-8);
+  --component-gap: var(--space-4);
+
+  /* =========================================================================
+   * Z-INDEX SCALE
+   * ========================================================================= */
+  
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+  --z-toast: 1080;
+
+  /* =========================================================================
+   * TRANSITION TIMING
+   * ========================================================================= */
+  
+  --transition-fast: 100ms ease-in-out;
+  --transition-normal: 150ms ease-in-out;
+  --transition-slow: 250ms ease-in-out;
+  --transition-bounce: 300ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* =========================================================================
+   GLOBAL OVERFLOW PREVENTION — Prevents horizontal scroll on mobile
+   ========================================================================= */
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+#root {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Ensure all images are responsive by default */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* =========================================================================
+   CUSTOM SCROLLBAR — Premium thin scrollbar for sidebar and panels
+   ========================================================================= */
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 4px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Firefox scrollbar */
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+}
+
+/* Custom animations for LaunchLens AI */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(201, 208, 252, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(201, 208, 252, 0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Bouncing dots for chat loading indicator */
+@keyframes bounceDot {
+  0%, 80%, 100% {
+    opacity: 0.3;
+    transform: translateY(0);
+  }
+  40% {
+    opacity: 1;
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Hero decorative animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg) translateX(60px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(60px) rotate(-360deg);
+  }
+}
+
+@keyframes pulseSoft {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* =========================================================================
+   PREMIUM DASHBOARD POLISH — Card hover lift, section fade-in, refined focus
+   ========================================================================= */
+
+/* Staggered card entrance for dashboard grids */
+@keyframes cardEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-card-entrance {
+  animation: cardEntrance 0.4s ease-out both;
+}
+
+/* Subtle glow pulse for KPI accent borders */
+@keyframes borderGlow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* Premium hover lift for interactive cards */
+.card-hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card-hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(201, 208, 252, 0.2);
+}
+
+/* Section heading underline accent */
+.section-heading-accent {
+  position: relative;
+  display: inline-block;
+}
+.section-heading-accent::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 48px;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #DE85E2, #C9D0FC);
+}
+
+/* Print-export container: invisible on screen, visible only when printing */
+#print-export-container {
+  display: none;
+}
+
+/* =========================================================================
+   VIDEO EMBED CROPPING — Eliminates Google Drive letterboxing on mobile
+   The Drive preview iframe adds ~50px black bars at narrow widths.
+   We scale the iframe up and center it so the bars are pushed outside
+   the visible overflow-hidden container. Desktop keeps 100%/100%.
+   ========================================================================= */
+
+.drive-video-crop {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Mobile: scale iframe to crop out Drive's internal letterboxing */
+@media (max-width: 767px) {
+  .drive-video-crop .drive-iframe-wrapper {
+    /* Scale up to push black bands outside the container */
+    width: 130%;
+    height: 130%;
+    /* Center the scaled wrapper using negative offsets */
+    position: absolute;
+    left: -15%;
+    top: -15%;
+  }
+}
+
+/* Desktop: no scaling needed */
+@media (min-width: 768px) {
+  .drive-video-crop .drive-iframe-wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
+
+/* Print styles for Launch Decision Engine report and PDF export */
+@media print {
+  /* Hide sidebar, top nav, and interactive controls */
+  aside,
+  nav,
+  header,
+  .print\:hidden {
+    display: none !important;
+  }
+
+  /* Show only report content */
+  .print\:block {
+    display: block !important;
+  }
+
+  /* When body has .print-export-active, show ONLY the export container */
+  body.print-export-active > *:not(#print-export-container) {
+    display: none !important;
+  }
+
+  body.print-export-active #print-export-container {
+    display: block !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 99999 !important;
+    padding: 20px !important;
+    font-family: system-ui, -apple-system, sans-serif !important;
+    color: #171717 !important;
+    background: white !important;
+  }
+
+  /* Clean black text on white background */
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+
+  * {
+    color-adjust: exact !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Remove shadows and borders for cleaner output */
+  .shadow-lg,
+  .shadow-md,
+  .shadow-sm {
+    box-shadow: none !important;
+  }
+
+  /* Ensure cards have visible borders */
+  [class*="border"] {
+    border-color: #ccc !important;
+  }
+
+  /* Page breaks between major sections */
+  .space-y-6 > * {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Allow page breaks before specific sections */
+  h2, h3 {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  /* Ensure proper spacing */
+  .p-5 {
+    padding: 1rem !important;
+  }
+
+  /* Force white background for cards */
+  [class*="bg-"] {
+    background-color: white !important;
+  }
+
+  /* Keep colored text for status indicators */
+  [class*="text-green"],
+  [class*="text-red"],
+  [class*="text-amber"] {
+    color: inherit !important;
+  }
+
+  /* Main content should take full width */
+  main,
+  [role="main"] {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  /* Hide animations */
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  /* Ensure links show URLs */
+  a[href]:after {
+    content: none !important;
+  }
+}
