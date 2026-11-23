@@ -1,0 +1,107 @@
+<svg width="64" height="64" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Brand gradient — Pink through Rose to Peach -->
+    <linearGradient id="icon-brandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#DE85E2"/>
+      <stop offset="30%" stop-color="#DE8DDB"/>
+      <stop offset="60%" stop-color="#E4B2BE"/>
+      <stop offset="100%" stop-color="#E9BCA6"/>
+    </linearGradient>
+
+    <!-- Lens glass — radial frosted effect -->
+    <radialGradient id="icon-lensGlass" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#F3EEFF" stop-opacity="0.85"/>
+      <stop offset="60%" stop-color="#E8E4FC" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#C9D0FC" stop-opacity="0.3"/>
+    </radialGradient>
+
+    <!-- Rim highlight for dimensionality -->
+    <linearGradient id="icon-rimHighlight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#DE85E2"/>
+      <stop offset="40%" stop-color="#DE8DDB"/>
+      <stop offset="70%" stop-color="#E4B2BE"/>
+      <stop offset="100%" stop-color="#E9BCA6"/>
+    </linearGradient>
+
+    <!-- Rocket body gradient -->
+    <linearGradient id="icon-rocketBody" x1="50%" y1="100%" x2="50%" y2="0%">
+      <stop offset="0%" stop-color="#C9D0FC"/>
+      <stop offset="50%" stop-color="#DE8DDB"/>
+      <stop offset="100%" stop-color="#DE85E2"/>
+    </linearGradient>
+
+    <!-- Growth bar gradient -->
+    <linearGradient id="icon-barGrad" x1="50%" y1="100%" x2="50%" y2="0%">
+      <stop offset="0%" stop-color="#9DD37D"/>
+      <stop offset="100%" stop-color="#E9FEDE"/>
+    </linearGradient>
+
+    <!-- Handle gradient -->
+    <linearGradient id="icon-handleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E4B2BE"/>
+      <stop offset="100%" stop-color="#E9BCA6"/>
+    </linearGradient>
+
+    <!-- Subtle glow filter -->
+    <filter id="icon-glow" x="-15%" y="-15%" width="130%" height="130%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="1.5" result="blur"/>
+      <feFlood flood-color="#C9D0FC" flood-opacity="0.2" result="color"/>
+      <feComposite in="color" in2="blur" operator="in" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Exhaust glow -->
+    <filter id="icon-exhaustGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <g filter="url(#icon-glow)">
+    <!-- Magnifying lens circle -->
+    <circle cx="21" cy="21" r="16.5" stroke="url(#icon-rimHighlight)" stroke-width="3" fill="url(#icon-lensGlass)"/>
+
+    <!-- Inner lens shine arc — adds glass dimensionality -->
+    <path d="M11 11 Q15 7.5 23 9.5" stroke="white" stroke-width="1" stroke-opacity="0.4" fill="none" stroke-linecap="round"/>
+
+    <!-- Lens handle -->
+    <line x1="33" y1="33" x2="43.5" y2="43.5" stroke="url(#icon-handleGrad)" stroke-width="3.5" stroke-linecap="round"/>
+    <!-- Handle highlight -->
+    <line x1="33.5" y1="32.5" x2="42.5" y2="41.5" stroke="white" stroke-width="0.7" stroke-opacity="0.2" stroke-linecap="round"/>
+
+    <!-- Ascending growth bars (4 bars, ascending) -->
+    <rect x="9.5" y="26.5" width="3" height="5.5" rx="1.2" fill="url(#icon-barGrad)" opacity="0.85"/>
+    <rect x="13.5" y="22.5" width="3" height="9.5" rx="1.2" fill="url(#icon-barGrad)" opacity="0.9"/>
+    <rect x="17.5" y="18" width="3" height="14" rx="1.2" fill="url(#icon-barGrad)" opacity="0.95"/>
+    <rect x="21.5" y="13.5" width="3" height="18.5" rx="1.2" fill="url(#icon-barGrad)"/>
+
+    <!-- Rocket launching from tallest bar -->
+    <g transform="translate(23.5, 7) rotate(-12)">
+      <!-- Rocket body -->
+      <path d="M0 6.5 C0 6.5 1.8 -0.5 1.8 -0.5 C1.8 -0.5 3.6 6.5 3.6 6.5 L2.9 6.5 L1.8 8.2 L0.7 6.5 Z" fill="url(#icon-rocketBody)"/>
+      <!-- Rocket window -->
+      <circle cx="1.8" cy="3" r="0.8" fill="#F3EEFF" opacity="0.9"/>
+      <!-- Left fin -->
+      <path d="M0 6.5 L-1 8.8 L0.7 7.5 Z" fill="#DE85E2"/>
+      <!-- Right fin -->
+      <path d="M3.6 6.5 L4.6 8.8 L2.9 7.5 Z" fill="#DE85E2"/>
+      <!-- Exhaust flame -->
+      <g filter="url(#icon-exhaustGlow)">
+        <path d="M1 8.2 Q1.8 11.5 2.6 8.2" stroke="#E9BCA6" stroke-width="0.8" fill="#EACAA1" fill-opacity="0.5"/>
+        <path d="M1.3 8.2 Q1.8 10.5 2.3 8.2" stroke="#DE85E2" stroke-width="0.4" fill="none" opacity="0.6"/>
+      </g>
+    </g>
+
+    <!-- AI sparkle accents -->
+    <circle cx="11" cy="13" r="1.2" fill="#DE85E2" opacity="0.75"/>
+    <circle cx="28.5" cy="16" r="0.9" fill="#C9D0FC" opacity="0.65"/>
+    <circle cx="13.5" cy="30.5" r="0.7" fill="#EACAA1" opacity="0.55"/>
+    <circle cx="27" cy="27.5" r="0.55" fill="#DE8DDB" opacity="0.4"/>
+  </g>
+</svg>
